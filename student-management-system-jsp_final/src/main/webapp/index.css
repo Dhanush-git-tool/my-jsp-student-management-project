@@ -1,0 +1,68 @@
+@charset "UTF-8";
+.view-main input[type="submit"]{
+	width: 100px;
+	height: 30px;
+	border-radius: 5px;
+	font-weight: bold;
+}
+.view-main input[type="submit"]{
+background-color: cyan;
+color: black;}
+
+.view-main input[type="submit"]:hover{
+	cursor: pointer;
+	background-color:#00b8b8;
+	transition:0.5s;
+	box-shadow:  3px 5px 12px rgba(0, 0, 0, 0.4);
+}
+.update-main input[type="submit"]{
+background-color: orange;
+color: white;
+width: 150px;
+	height: 30px;
+	border-radius: 5px;
+	font-weight: bold;
+}
+.update-main input[type="submit"]:hover{
+	cursor: pointer;
+	background-color:#cc7000;
+	transition:0.5s;
+	box-shadow:  3px 5px 12px rgba(0, 0, 0, 0.4);
+}
+.delete-main input[type="submit"]{
+	background-color:red;
+	color: white;
+	width: 150px;
+	height: 30px;
+	border-radius: 5px;
+	font-weight: bold;
+}
+.delete-main input[type="submit"]:hover{
+	cursor: pointer;
+	background-color:#b30000;
+	transition:0.5s;
+	box-shadow:  3px 5px 12px rgba(0, 0, 0, 0.4);
+}
+.Dashboard-heading{
+     font-family: "Trebuchet MS", Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-align: center;
+}
+.total_students:hover{
+	box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.12);
+	transition:0.5s;
+}
+.male_students:hover{
+	box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.12);
+	transition:0.5s;
+}
+.female_students:hover{
+	box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.12);
+	transition:0.5s;
+}
+.department_students:hover{
+	box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.12);
+	transition:0.5s;
+}
