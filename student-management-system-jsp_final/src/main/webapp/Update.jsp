@@ -7,6 +7,61 @@
 <head>
 <meta charset="UTF-8">
 <title>update.jsp</title>
+<style>
+
+#searchbutton{
+width: 80px;
+	height: 20px;
+	border-radius: 5px;
+	font-weight: bold;
+	margin-left:20px;
+	background-color: purple;
+color: white;
+}
+#searchbutton:hover{
+background-color: #8E24AA;
+box-shadow: 0 5px 12px rgba(106, 27, 154, 0.35);
+cursor: pointer;
+transition: 0.3s;
+
+}
+#backbutton{
+width: 70px;
+	height: 25px;
+	border-radius: 5px;
+	font-weight: bold;
+	margin-top:0px;
+	background-color: #A8D3E6;
+color: #0D47A1;
+}
+#backbutton:hover{
+background-color: #7FAEC2;
+box-shadow: 0 5px 12px rgba(127, 174, 194, 0.35);
+cursor: pointer;
+transition: 0.3s;
+}
+#update-button{
+
+width: 70px;
+	height: 25px;
+	border-radius: 5px;
+	font-weight: bold;
+	color:white;
+}
+#update-button:hover{
+background-color: #FFB300;
+box-shadow: 0 5px 12px rgba(243, 156, 18, 0.35);
+cursor: pointer;
+transition: 0.3s;
+}
+body{
+display: flex;
+flex-direction: column;
+align-items:center;
+}
+
+
+</style>
 </head>
 <body>
 <sql:setDataSource
@@ -19,6 +74,7 @@
 <sql:query var="id" dataSource="${myDataSource}">
 SELECT stud_id From student_info order by stud_id asc;
 </sql:query>
+	<div class="main-1">
 	<form action="Update.jsp">
 		<h1>Update the student</h1>
 		<div class="idinput">
@@ -29,9 +85,11 @@ SELECT stud_id From student_info order by stud_id asc;
 				<option value="${row.stud_id}">${row.stud_id}</option>
 			</c:forEach>
 		</select>
-		<input type="submit" value="search" style="color: white; background-color: purple;">
+		<input id="searchbutton"type="submit" value="search" >
 		</div>
+		
 	</form>
+	</div>
 		<sql:query var="student" dataSource="${ myDataSource}">
 		Select * from student_info where stud_id=?;
 		<sql:param value="${param.idinput}"></sql:param>
@@ -54,15 +112,17 @@ SELECT stud_id From student_info order by stud_id asc;
 		<tr><td>myfiled</td><td><input type="checkbox" name="myfield" value="stud_phno"></td><td>Student Phono:</td><td><input type="text" name="stud_phnoInput" value="${row.stud_phno}"></td></tr>
 		<tr><td>myfiled</td><td><input type="checkbox" name="myfield" value="stud_gender"><td>Student Gender:</td><td><input type="radio" name="stud_genderInput" id="male"value="Male" ${row.stud_gender.equals("Male")? "checked" : "" }><label for="male">Male</label><input type="radio" value="Female" id="female" name="stud_genderInput" ${row.stud_gender.equals("Female")? "checked" : ""}><label for="female">Female</label></td></tr>
 		<tr><td>myfiled</td><td><input type="checkbox" name="myfield" value="stud_dob"><td>Student DOB</td><td><input type="date" name="stud_dobInput" value="${row.stud_dob }"></td></tr>
-		<tr><td><input type="submit" value="update" style="background-color: orange;color:black;"></td></tr>
+		<tr><td><input id="update-button" type="submit" value="update" style="background-color: orange;color:black;"></td></tr>
 		</c:forEach>
 		</table>
 		</form>
+		<c:if test="${not empty param.idinput }">
 		<div class="cancel">
 		<form action="index.jsp">
-		<input type="submit" value="back" style="color: blue;">
+		<input id="backbutton" type="submit" value="back" >
 		</form>
 		</div>
+		</c:if>
 	
 		
 	

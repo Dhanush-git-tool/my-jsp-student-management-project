@@ -2,6 +2,7 @@ package student_classes;
 
 import java.sql.Connection;
 
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -75,5 +76,43 @@ public class Data {
 			e.printStackTrace();
 		}
 		return department;
+	}
+	public ResultSet male_cards() {
+		ResultSet rs=null;
+		try {
+			Statement st=con.createStatement();
+			rs=st.executeQuery("Select * From student_info Where stud_gender='Male';");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return rs;
+	}
+	public ResultSet female_cards() {
+		ResultSet rs=null;
+		try {
+			Statement st= con.createStatement();
+			rs=st.executeQuery("Select * From student_info Where stud_gender='Female';");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return rs;
+	}
+	public ResultSet department_cards() {
+		ResultSet rs=null;
+		try {
+			Statement st=con.createStatement();
+			rs=st.executeQuery("select stud_department,\r\n"
+					+ "		stud_gender,\r\n"
+					+ "		count(*) as total_students \r\n"
+					+ "from student_info\r\n"
+					+ "group by stud_department,stud_gender\r\n"
+					+ "order by stud_department,stud_gender;");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return rs;
 	}
 }

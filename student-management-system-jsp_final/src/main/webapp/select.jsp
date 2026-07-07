@@ -12,9 +12,52 @@
 		border: 1px solid black;
 		margin:0px;
 	}
-	padding{
-	
+	th{
+	background-color: #007f7f;
+	color:white;
+    padding: 14px 12px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+    font-weight: 600;
 	}
+	td{
+	height:25px;
+	}
+	table{
+	border-spacing: 0px;
+	text-align: center;
+		}
+		body{
+			display: flex;
+			flex-direction: column;
+			margin: 20px;
+			
+		
+		}
+		tr:nth-child(even) {
+	background-color: lightblue;
+}
+.backform{
+text-align: center;
+}
+#back-button{
+
+width: 150px;
+	height: 30px;
+	border-radius: 5px;
+	font-weight: bold;
+	background-color:maroon;
+	color:white;
+}
+#back-button:hover{
+transition:0.5s;
+	box-shadow:  5px 10px 15px rgba(0, 0, 0, 0.4);
+	cursor: pointer;
+	background-color: #5a001f
+}
+tr:hover{
+background-color: lightblue;
+}
 	
 </style>
 </head>
@@ -56,10 +99,12 @@
 		System.out.println(e);
 		}
 	}*/%>
+	<div class="backform">
 	<form action="index.jsp">
 	<h1 style="color:maroon;">go back to the home page!</h1>
-		<input type="submit" value="back" style="color: maroon;">
+		<input id="back-button" type="submit" value="back" >
 	</form>
+	</div>
 
 </body>
 </html>

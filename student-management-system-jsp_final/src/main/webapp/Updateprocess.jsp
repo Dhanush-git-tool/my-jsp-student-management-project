@@ -7,7 +7,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Update-succesfull page</title>
+<title>Update-successfull page</title>
+<style>
+	body{
+	text-align: center;
+	}
+</style>
 </head>
 <body>
 	<% int myid=Integer.parseInt(request.getParameter("student_id")); 

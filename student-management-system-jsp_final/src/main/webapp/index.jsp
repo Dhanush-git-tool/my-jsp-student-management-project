@@ -47,9 +47,7 @@ height: 20px;
 border-radius: 5px;
 height: 20px;
 }
-.formgroup>placeholder{
 
-}
 .formgroup-container-2{
 	margin:20px;
 	display:flex;
@@ -74,7 +72,8 @@ right:310px;
 	position:relative;
 	top:28px;
 	background-color: green;
-	width: 100px;
+	
+	width: 150px;
 	height: 30px;
 	border-radius: 5px;
 	font-weight: bold;
@@ -112,6 +111,16 @@ width: 100%;
 justify-content: space-around;
 margin-top: 80px;
 }
+.Dashboard-heading h1{
+	margin: 0px;
+}
+.Dashboard-heading hr{
+width: 750px;
+height: 2px;
+background-color: black;
+border-radius: 25px;
+}
+
 .total_students{
 	border:1px solid black;
 	border-radius:10px;
@@ -149,7 +158,10 @@ fieldset {
 	border-radius: 10px;
 }
 
-
+a{
+text-decoration: none;
+color:black;
+}
 </style>
 <link rel="stylesheet" href="index.css">
 </head>
@@ -158,6 +170,8 @@ fieldset {
 <%Data ob1=(Data)application.getAttribute("Data");%>
 <div class="Dashboard-heading">
 	<header><h1 style="text-align: center">Student Management Dashboard</h1></header>
+	<hr>
+	
 	</div>
 	<div class="dashboard">
 		<div class="total_students">
@@ -165,12 +179,12 @@ fieldset {
 		<h1><%=ob1.total_students() %></h1>
 		<h4>All Students</h4>
 		</div>
-		<div class="male_students">
+		<a href="male(cards).jsp" class="male_students">
 			<h2>Male Students</h2>
 			<h1><%=ob1.male_students() %></h1>
 			<h4>All Male Students</h4>
-		</div>
-		<div class="female_students">
+		</a>
+		<a href="female(cards).jsp" class="female_students">
 			<h2>Female Students</h2>
 				<%
 					int female=0;
@@ -181,12 +195,12 @@ fieldset {
 						}%>
 			<h1><%=female %></h1>			
 			<h4> All Female Students</h4>
-		</div>
-		<div class="department_students">
+		</a>
+		<a href="department(cards).jsp" class="department_students">
 			<h2>Departments</h2>
 			<h1><%=ob1.department_students() %></h1>
 			<h4>Total Departments</h4>
-		</div>
+		</a>
 	</div>
 	<div class="main_container">
 	<div class="main-1">
@@ -220,6 +234,7 @@ fieldset {
 							<option value="EEE">Electrical and Electronics Engineering</option>
 							<option value="AIDS">Artificial Intelligence and Data Science</option>
 							<option value="It">Information Technology</option>
+							<option value="DME">Diplomo Mechanical Engineering</option>
 							
 							</select>
 						</div>
